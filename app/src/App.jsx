@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import Home from './pages/Home'
 import Edu from './pages/Edu'
 import Txt from './pages/Txt'
@@ -23,6 +24,7 @@ function App() {
             <Route path="/txt/jan2026" element={<Jan2026 />} />
             <Route path="/etc" element={<Etc />} />
           </Routes>
+          <Analytics />
         </div>
       </Router>
     </IntroProvider>
