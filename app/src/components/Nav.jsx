@@ -12,7 +12,7 @@ function Nav() {
             location.pathname === '/' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
           }`}
         >
-          Home
+          home
         </Link>
         <Link
           to="/about"
@@ -20,7 +20,7 @@ function Nav() {
             location.pathname === '/about' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
           }`}
         >
-          About
+          about
         </Link>
         <Link
           to="/travel"
@@ -28,7 +28,7 @@ function Nav() {
             location.pathname === '/travel' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
           }`}
         >
-          Travel
+          travel
         </Link>
       </div>
     </nav>
