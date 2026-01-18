@@ -11,10 +11,14 @@ function Txt() {
               .txt
             </h1>
             
-            <p className="text-gray-600 hover:text-gray-900">
+            <p className="text-gray-600 hover:text-orange-700">
             <Link to="/txt/jan2026" className="block mb-3"> january </Link>
-            <Link to="/txt/dec2025" className="block"> december </Link>
             </p>
+
+            <p className="text-gray-600 hover:text-orange-700">
+            <Link to="/txt/dec2025" className="block mb-3"> december </Link>
+            </p>
+
         
 
           </header>
