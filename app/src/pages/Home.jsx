@@ -202,7 +202,7 @@ function Home() {
           <div 
             className="relative flex flex-col items-center justify-center"
             style={{
-              transform: paperSliding ? 'translateY(-40px)' : 'translateY(0)',
+              transform: paperSliding ? 'translateY(-40px) scale(0.9)' : 'translateY(0) scale(1)',
               opacity: paperSliding ? 0 : 1,
               transition: paperSliding ? 'transform 0.6s ease-out, opacity 0.6s ease-out' : 'none'
             }}
