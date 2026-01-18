@@ -40,14 +40,6 @@ function Nav() {
           />
         </Link>
         <Link
-          to="/"
-          className={`text-sm font-medium ${
-            location.pathname === '/' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
-          }`}
-        >
-          home
-        </Link>
-        <Link
           to="/edu"
           className={`text-sm font-medium ${
             location.pathname === '/edu' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
@@ -56,12 +48,20 @@ function Nav() {
           edu
         </Link>
         <Link
-          to="/travel"
+          to="/txt"
           className={`text-sm font-medium ${
-            location.pathname === '/travel' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
+            location.pathname === '/txt' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
           }`}
         >
-          travel
+          txt
+        </Link>
+        <Link
+          to="/etc"
+          className={`text-sm font-medium ${
+            location.pathname === '/etc' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
+          }`}
+        >
+          etc
         </Link>
       </div>
     </nav>

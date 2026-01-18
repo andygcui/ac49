@@ -337,23 +337,23 @@ function Home() {
               <div className="w-24 h-24 rounded-full bg-gray-200 overflow-hidden transition-all duration-200 hover:scale-110 cursor-pointer">
                 {/* Placeholder for edu image - replace with img tag when ready */}
                 <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs">
-                  edu
+                  .edu
                 </div>
               </div>
             </Link>
-            <Link to="/travel" className="group">
+            <Link to="/txt" className="group">
               <div className="w-24 h-24 rounded-full bg-gray-200 overflow-hidden transition-all duration-200 hover:scale-110 cursor-pointer">
-                {/* Placeholder for travel image - replace with img tag when ready */}
+                {/* Placeholder for txt image - replace with img tag when ready */}
                 <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs">
-                  travel
+                  .txt
                 </div>
               </div>
             </Link>
-            <Link to="/" className="group">
+            <Link to="/etc" className="group">
               <div className="w-24 h-24 rounded-full bg-gray-200 overflow-hidden transition-all duration-200 hover:scale-110 cursor-pointer">
-                {/* Placeholder for misc image - replace with img tag when ready */}
+                {/* Placeholder for etc image - replace with img tag when ready */}
                 <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs">
-                  misc
+                  .etc
                 </div>
               </div>
             </Link>
