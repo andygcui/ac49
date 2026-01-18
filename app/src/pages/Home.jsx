@@ -102,17 +102,27 @@ function Home() {
       }
     }
 
-    // Listen for clicks and scrolls to reveal main content
+    // Handle keyboard events (spacebar)
+    const handleKeyDown = (e) => {
+      if (showIntro && !paperSliding && e.key === ' ') {
+        e.preventDefault() // Prevent spacebar from scrolling
+        handleInteraction()
+      }
+    }
+
+    // Listen for clicks, scrolls, and keyboard to reveal main content
     if (showIntro && !paperSliding) {
       window.addEventListener('click', handleInteraction, { once: true })
       window.addEventListener('scroll', handleInteraction, { once: true })
       window.addEventListener('touchstart', handleInteraction, { once: true })
+      window.addEventListener('keydown', handleKeyDown, { once: true })
     }
 
     return () => {
       window.removeEventListener('click', handleInteraction)
       window.removeEventListener('scroll', handleInteraction)
       window.removeEventListener('touchstart', handleInteraction)
+      window.removeEventListener('keydown', handleKeyDown)
     }
   }, [showIntro, paperSliding, tigerVisible])
 
@@ -277,6 +287,15 @@ function Home() {
                 <FaGithub size={24} />
               </a>
               <a
+                href="https://www.instagram.com/_andycui"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-1000 hover:text-gray-800 transition-colors"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={24} />
+              </a>
+              <a
                 href="https://www.tiktok.com/@andy_cui"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -303,15 +322,7 @@ function Home() {
               >
                 <FaSpotify size={24} />
               </a>
-              <a
-                href="https://www.instagram.com/_andycui"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-1000 hover:text-gray-800 transition-colors"
-                aria-label="Instagram"
-              >
-                <FaInstagram size={24} />
-              </a>
+              
             </div>
           </header>
         </div>
