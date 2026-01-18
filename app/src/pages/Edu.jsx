@@ -11,11 +11,20 @@ function Edu() {
               i am a financial engineering student @ princeton who enjoys studying algorithms, statistics & probability; web / game development; and transformer-based AI research.
             </p>
 
-            <div className="flex justify-center" style={{ marginTop: '-50px', marginBottom: '-150px' }}>
-                 <img src="/uploads/me.png" 
-                 alt="me"
-                 className="max-w-xs scale-40" 
-                 style={{ transform: 'scale(0.4)' }}></img>
+            <div className="flex justify-center" style={{ marginTop: '-50px', marginBottom: '-150px', minHeight: '200px', position: 'relative' }}>
+                 <img 
+                   src="/uploads/me.png" 
+                   alt="me"
+                   className="max-w-xs" 
+                   style={{ 
+                     transform: 'scale(0.4)', 
+                     display: 'block',
+                     width: 'auto',
+                     height: 'auto',
+                     willChange: 'auto'
+                   }}
+                   loading="eager"
+                 />
             </div>
           </header>
           <div className="mt-8">

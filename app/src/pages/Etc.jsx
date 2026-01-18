@@ -93,6 +93,7 @@ function Etc() {
               style={{ transform: 'scale(0.6)', marginTop: '-100px' }}
             />
           </div>
+          <p className="text-gray-600 text-center">soon</p>
         </div>
       </div>
 
