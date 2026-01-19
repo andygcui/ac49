@@ -6,6 +6,8 @@ import Edu from './pages/Edu'
 import Txt from './pages/Txt'
 import Dec2025 from './pages/months/Dec2025'
 import Jan2026 from './pages/months/Jan2026'
+import Dump2025 from './pages/months/Dump2025'
+import Gestalt from './pages/months/Gestalt'
 import Etc from './pages/Etc'
 import Nav from './components/Nav'
 import './App.css'
@@ -20,8 +22,10 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/edu" element={<Edu />} />
           <Route path="/txt" element={<Txt />} />
-          <Route path="/txt/dec2025" element={<Dec2025 />} />
-          <Route path="/txt/jan2026" element={<Jan2026 />} />
+          <Route path="/txt/dec25" element={<Dec2025 />} />
+          <Route path="/txt/jan26" element={<Jan2026 />} />
+          <Route path="/txt/2025" element={<Dump2025 />} />
+          <Route path="/txt/gestalt" element={<Gestalt />} />
           <Route path="/etc" element={<Etc />} />
         </Routes>
         <Analytics />
