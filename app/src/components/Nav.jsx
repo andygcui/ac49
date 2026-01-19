@@ -4,13 +4,15 @@ import { FaGithub, FaTiktok, FaYoutube, FaSpotify, FaInstagram, FaRegEnvelope } 
 function Nav() {
   const location = useLocation()
   const isHomePage = location.pathname === '/home'
+  const isIntroPage = location.pathname === '/'
 
   return (
-    <nav className="py-5">
+    <nav className="py-7">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-6">
           <Link
             to="/home"
+            style={isIntroPage ? { visibility: 'hidden' } : {}}
           >
             <img 
               src="/uploads/header.png" 
