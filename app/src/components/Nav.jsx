@@ -6,7 +6,7 @@ function Nav() {
   const isHomePage = location.pathname === '/home'
 
   return (
-    <nav className="py-3">
+    <nav className="py-5">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-6">
           <Link
