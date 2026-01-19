@@ -12,7 +12,9 @@ function Intro() {
   const [hoverLinkVisible, setHoverLinkVisible] = useState([false, false, false])
   const [isHovering, setIsHovering] = useState(false)
   const [isAnimatingOut, setIsAnimatingOut] = useState(false)
+  const [isHoverAnimatingOut, setIsHoverAnimatingOut] = useState(false)
   const [tigerBright, setTigerBright] = useState(false)
+  const hoverTimeoutRef = useRef(null)
   const audioRef = useRef(null)
 
   // Preload images for smooth transitions
@@ -70,7 +72,8 @@ function Intro() {
 
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <>
+    <div className="h-screen bg-white relative overflow-hidden flex flex-col">
       {/* Optional thunk sound */}
       <audio ref={audioRef} preload="auto">
         <source src="/thunk.mp3" type="audio/mpeg" />
@@ -155,6 +158,10 @@ function Intro() {
             }}
             onMouseEnter={() => {
               if (tigerVisible && !paperSliding && !tigerClicked) {
+                if (hoverTimeoutRef.current) {
+                  clearTimeout(hoverTimeoutRef.current)
+                  hoverTimeoutRef.current = null
+                }
                 setIsHovering(true)
                 // Animate hover links in
                 setTimeout(() => setHoverLinkVisible([true, false, false]), 100)
@@ -164,9 +171,17 @@ function Intro() {
             }}
             onMouseLeave={() => {
               if (tigerVisible && !paperSliding && !tigerClicked) {
-                setIsHovering(false)
-                // Reset hover links
-                setHoverLinkVisible([false, false, false])
+                hoverTimeoutRef.current = setTimeout(() => {
+                  // Start reverse animation
+                  setIsHoverAnimatingOut(true)
+                  setHoverLinkVisible([true, true, false]) // Hide last link first
+                  setTimeout(() => setHoverLinkVisible([true, false, false]), 100) // Hide second
+                  setTimeout(() => setHoverLinkVisible([false, false, false]), 200) // Hide first
+                  setTimeout(() => {
+                    setIsHovering(false)
+                    setIsHoverAnimatingOut(false)
+                  }, 400)
+                }, 500) // 0.5 second delay before collapsing
               }
             }}
           >
@@ -250,13 +265,33 @@ function Intro() {
                     style={{
                       gap: '0.75rem'
                     }}
+                    onMouseEnter={() => {
+                      if (hoverTimeoutRef.current) {
+                        clearTimeout(hoverTimeoutRef.current)
+                        hoverTimeoutRef.current = null
+                      }
+                      setIsHovering(true)
+                    }}
+                    onMouseLeave={() => {
+                      hoverTimeoutRef.current = setTimeout(() => {
+                        // Start reverse animation
+                        setIsHoverAnimatingOut(true)
+                        setHoverLinkVisible([true, true, false]) // Hide last link first
+                        setTimeout(() => setHoverLinkVisible([true, false, false]), 100) // Hide second
+                        setTimeout(() => setHoverLinkVisible([false, false, false]), 200) // Hide first
+                        setTimeout(() => {
+                          setIsHovering(false)
+                          setIsHoverAnimatingOut(false)
+                        }, 400)
+                      }, 500)
+                    }}
                   >
                     <Link 
                       to="/home" 
                       className="text-gray-700 hover:text-gray-900 transition-colors"
                       style={{
-                        opacity: hoverLinkVisible[0] ? 1 : 0,
-                        transform: hoverLinkVisible[0] ? 'translateY(0)' : 'translateY(-10px)',
+                        opacity: isHoverAnimatingOut ? 0 : (hoverLinkVisible[0] ? 1 : 0),
+                        transform: isHoverAnimatingOut ? 'translateY(-10px)' : (hoverLinkVisible[0] ? 'translateY(0)' : 'translateY(-10px)'),
                         transition: 'opacity 0.3s ease-out, transform 0.3s ease-out'
                       }}
                     >
@@ -266,8 +301,8 @@ function Intro() {
                       to="/txt/jan26" 
                       className="text-gray-700 hover:text-gray-900 transition-colors"
                       style={{
-                        opacity: hoverLinkVisible[1] ? 1 : 0,
-                        transform: hoverLinkVisible[1] ? 'translateY(0)' : 'translateY(-10px)',
+                        opacity: isHoverAnimatingOut ? 0 : (hoverLinkVisible[1] ? 1 : 0),
+                        transform: isHoverAnimatingOut ? 'translateY(-10px)' : (hoverLinkVisible[1] ? 'translateY(0)' : 'translateY(-10px)'),
                         transition: 'opacity 0.3s ease-out, transform 0.3s ease-out'
                       }}
                     >
@@ -277,8 +312,8 @@ function Intro() {
                       to="/txt/2025" 
                       className="text-gray-700 hover:text-gray-900 transition-colors"
                       style={{
-                        opacity: hoverLinkVisible[2] ? 1 : 0,
-                        transform: hoverLinkVisible[2] ? 'translateY(0)' : 'translateY(-10px)',
+                        opacity: isHoverAnimatingOut ? 0 : (hoverLinkVisible[2] ? 1 : 0),
+                        transform: isHoverAnimatingOut ? 'translateY(-10px)' : (hoverLinkVisible[2] ? 'translateY(0)' : 'translateY(-10px)'),
                         transition: 'opacity 0.3s ease-out, transform 0.3s ease-out'
                       }}
                     >
@@ -310,7 +345,11 @@ function Intro() {
           </div>
         </div>
       </div>
+      <div className="mt-auto text-center pb-8">
+        <p className="text-gray-600 ">:)</p>
+      </div>
     </div>
+    </>
   )
 }
 
