@@ -65,19 +65,19 @@ function Nav() {
             <>
               <Link
                 to="/edu"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900"
+                className="text-sm font-medium text-gray-600 hover:text-orange-700"
               >
                 edu
               </Link>
               <Link
                 to="/txt"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900"
+                className="text-sm font-medium text-gray-600 hover:text-orange-700"
               >
                 txt
               </Link>
               <Link
                 to="/etc"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900"
+                className="text-sm font-medium text-gray-600 hover:text-orange-700"
               >
                 etc
               </Link>
@@ -107,7 +107,7 @@ function Nav() {
                 <Link
                   to="/edu"
                   className={`text-sm font-medium whitespace-nowrap ${
-                    currentPage === 'edu' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
+                    currentPage === 'edu' ? 'text-gray-900' : 'text-gray-600 hover:text-orange-700'
                   }`}
                 >
                   edu
@@ -115,7 +115,7 @@ function Nav() {
                 <Link
                   to="/txt"
                   className={`text-sm font-medium whitespace-nowrap ${
-                    currentPage === 'txt' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
+                    currentPage === 'txt' ? 'text-gray-900' : 'text-gray-600 hover:text-orange-700'
                   }`}
                 >
                   txt
@@ -123,7 +123,7 @@ function Nav() {
                 <Link
                   to="/etc"
                   className={`text-sm font-medium whitespace-nowrap ${
-                    currentPage === 'etc' ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
+                    currentPage === 'etc' ? 'text-gray-900' : 'text-gray-600 hover:text-orange-700'
                   }`}
                 >
                   etc
@@ -139,7 +139,7 @@ function Nav() {
               href="https://github.com/andygcui"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-gray-600 hover:text-gray-1000 transition-colors"
               aria-label="GitHub"
             >
               <FaGithub size={18} />
@@ -148,7 +148,7 @@ function Nav() {
               href="https://www.instagram.com/_andycui"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-gray-600 hover:text-gray-1000 transition-colors"
               aria-label="Instagram"
             >
               <FaInstagram size={18} />
@@ -157,7 +157,7 @@ function Nav() {
               href="https://www.tiktok.com/@andy_cui"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-gray-600 hover:text-gray-1000 transition-colors"
               aria-label="TikTok"
             >
               <FaTiktok size={18} />
