@@ -31,15 +31,27 @@ function Edu() {
             <h2 className="text-xl font-serif text-gray-900 mb-6 border-b border-gray-300 pb-2">experience & projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-20">
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">Miyagi Labs (YC W25)</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">
+                  <a href="https://miyagilabs.ai" target="_blank" rel="noopener noreferrer" className="hover:underline cursor-text">
+                    Miyagi Labs (YC W25)
+                  </a>
+                </h3>
                 <p className="text-sm text-gray-700">Full-stack developer building automated course generation pipelines, dashboards, and React features.</p>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">Special Triangles in 3-Colorings of Complete Graphs: Rainbow and Monochromatic Ramsey theory</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors hover:underline cursor-text">
+                  <a href="/uploads/ramsey.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline cursor-text">
+                    Special Triangles in 3-Colorings of Complete Graphs: Rainbow and Monochromatic Ramsey theory
+                  </a>
+                </h3>
                 <p className="text-sm text-gray-600 mb-2"> "Given any 3-edge-coloring of the complete graph 𝐾<sub>𝑛</sub> , what is the smallest 𝑛 such that there must exist at least two special triangles?"</p>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">Applying Civil Information Modeling and Augmented Reality to the Construction of Underground Pipelines</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">
+                  <a href="/uploads/ar.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline cursor-text">
+                  Applying Civil Information Modeling and Augmented Reality to the Construction of Underground Pipelines
+                  </a>
+                  </h3>
                 <p className="text-sm text-gray-700">AR display of underground pipeline structures to assist and increase safety for construction engineers.
                 </p>
               </div>
@@ -48,11 +60,19 @@ function Edu() {
                 <p className="text-sm text-gray-700">Multivariate linear regression model optimized for log loss using historical performance data</p>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">GreenTrip</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">
+                  <a href="https://youtu.be/GqZLsIdueTE" target="_blank" rel="noopener noreferrer" className="hover:underline cursor-text">
+                  GreenTrip
+                  </a>
+                  </h3>
                 <p className="text-sm text-gray-700">Full-stack sustainable AI travel agent optimizing for CO₂ emissions, cost, and sustainability</p>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">3D Tennis Swing Tracker</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">
+                  <a href="https://youtu.be/HbyJnkKpvEI" target="_blank" rel="noopener noreferrer" className="hover:underline cursor-text">
+                  3D Tennis Swing Tracker
+                  </a>
+                  </h3>
                 <p className="text-sm text-gray-700">MediaPipe pose detection to analyze tennis swing mechanics, create 3d swingpath models, and compare with pro baselines</p>
               </div>
               <div>
@@ -60,11 +80,19 @@ function Edu() {
                 <p className="text-sm text-gray-700">Gamified productivity app for mac with custom state-machine system, hand-drawn animations, and progression tracking</p>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">Recycle Princeton</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">
+                  <a href="https://youtu.be/UewQcdBEVyg" target="_blank" rel="noopener noreferrer" className="hover:underline cursor-text">
+                  Recycle Princeton
+                  </a>
+                  </h3>
                 <p className="text-sm text-gray-700">Tetris-style recycling game for educating children aged 5-8 about plastic waste sorting based on local regulations</p>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">EmojiWorld</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">
+                  <a href="https://youtu.be/-YiuDrHBZPs" target="_blank" rel="noopener noreferrer" className="hover:underline cursor-text">
+                  EmojiWorld
+                  </a>
+                  </h3>
                 <p className="text-sm text-gray-700">Original 2D Pixel RPG with hand-animated sprites, collision detection, and multi-world transitions</p>
               </div>
              
