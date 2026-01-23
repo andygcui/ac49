@@ -76,8 +76,12 @@ function Edu() {
                 <p className="text-sm text-gray-700">MediaPipe pose detection to analyze tennis swing mechanics, create 3d swingpath models, and compare with pro baselines</p>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">Pomoplant</h3>
-                <p className="text-sm text-gray-700">Gamified productivity app for mac with custom state-machine system, hand-drawn animations, and progression tracking</p>
+                <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">
+                  <a href="https://www.pomoplant.net/" target="_blank" rel="noopener noreferrer" className="hover:underline cursor-text">
+                  Pomoplant
+                  </a>
+                  </h3>
+                <p className="text-sm text-gray-700">Gamified productivity app for macOS with custom state-machine system, hand-drawn animations, & progression tracking</p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2 hover:text-orange-700 transition-colors">
