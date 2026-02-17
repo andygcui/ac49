@@ -24,7 +24,7 @@ function Txt() {
             </p>
 
             <p className="text-gray-600 hover:text-orange-700 hover:underline">
-            <Link to="/txt/gestalt" className="block mb-3 cursor-text"> on gestalt (testing) </Link>
+            <Link to="/txt/gestalt" className="block mb-3 cursor-text"> gestalt (testing) </Link>
             </p>
 
         
