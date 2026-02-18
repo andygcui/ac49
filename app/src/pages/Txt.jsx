@@ -12,6 +12,10 @@ function Txt() {
             </h1>
             
             <p className="text-gray-600 hover:underline hover:text-orange-700">
+            <Link to="/txt/feb26" className="block mb-3 cursor-text"> february </Link>
+            </p>
+
+            <p className="text-gray-600 hover:underline hover:text-orange-700">
             <Link to="/txt/jan26" className="block mb-3 cursor-text"> january </Link>
             </p>
 
@@ -26,8 +30,6 @@ function Txt() {
             <p className="text-gray-600 hover:text-orange-700 hover:underline">
             <Link to="/txt/gestalt" className="block mb-3 cursor-text"> gestalt (testing) </Link>
             </p>
-
-        
 
           </header>
         </div>
