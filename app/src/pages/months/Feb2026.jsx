@@ -27,7 +27,7 @@ function Jan2026() {
                 february 2026
               </h1>
               <p className="text-gray-600 mb-2 italic">
-                bicker, benz, boooze, buddy
+                bicker, benz, boooze, buddy, blizzard
               </p>
               <p className="text-gray-600 mb-2">
                 <br />
