@@ -1,24 +1,17 @@
 // @ts-nocheck
-function Jan2026() {
+function Feb2026() {
     return (
       <div className="min-h-screen bg-white">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
 
-            {/* <div className="flex justify-center"> 
-              <video 
-              src="/uploads/january26.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              alt="jan"
-              controls={false}
-              className="max-w-xs scale-40"
-              style={{width: '20%', height: 'auto'}}>
-              </video>
-            </div> */}
-
+            <div className="flex justify-center mb-8">
+              <img 
+                src="/uploads/feb26.png" 
+                alt="February 2026"
+                className="max-w-[200px] h-auto"
+              />
+            </div>
 
             <header className="text-center mb-16">
 
@@ -71,5 +64,5 @@ function Jan2026() {
   }
   
   // @ts-ignore
-  export default Jan2026
+  export default Feb2026
   
