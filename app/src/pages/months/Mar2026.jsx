@@ -12,7 +12,7 @@ function Mar2026() {
                 march 2026
               </h1>
               <p className="text-gray-600 mb-2 italic">
-                briger, borg, midterms, 
+                briger, borgs, midterms, 
               </p>
               <p className="text-gray-600 mb-2">
                 <br />
