@@ -20,7 +20,7 @@ function Feb2026() {
                 february 2026
               </h1>
               <p className="text-gray-600 mb-2 italic">
-                bicker, benz, boooze, buddy, blizzard
+                bicker, benz, boooze, jobs, buddys, blizzard
               </p>
               <p className="text-gray-600 mb-2">
                 <br />
@@ -38,19 +38,19 @@ function Feb2026() {
                 dreams, fleetwood mac <br />
                 piss in the wind, joji</p>
                
-                
+
                 <br />
       
 
-              {/* <iframe 
+              <iframe 
             width="80" 
             height="80" 
-            src="https://www.youtube.com/embed/Wzn4BLtE73o?start=124&autoplay=1" 
-            title="is it a crime to be unsure" 
+            src="https://www.youtube.com/embed/1qmrq6I_jHI?start=53&autoplay=1" 
+            title="raindance" 
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen>
-          </iframe> */}
+          </iframe>
           
               <br /><br /><br /> <br /><br />
             </div>
