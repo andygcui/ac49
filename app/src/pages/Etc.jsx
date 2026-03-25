@@ -13,10 +13,14 @@ const ETC_SECTIONS = [
 
 const GRID_SLOT_COUNT = 56
 const TILE_ENTER_STAGGER_MS = 50
-const TILE_FOLD_STAGGER_MS = 14
-const TILE_FOLD_DURATION_MS = 320
-const SHELL_COLLAPSE_MS = 520
-const SHELL_COLLAPSE_EASE = 'cubic-bezier(0.45, 0, 0.2, 1)'
+const TILE_FOLD_STAGGER_MS = 18
+const TILE_FOLD_DURATION_MS = 440
+const TILE_UNDER_ROW_DURATION_MS = 300
+/** Smooth ease-out (settle) — feels less abrupt than linear-ish curves */
+const TILE_FOLD_EASE = 'cubic-bezier(0.22, 1, 0.32, 1)'
+const SHELL_COLLAPSE_MS = 720
+const SHELL_COLLAPSE_EASE = 'cubic-bezier(0.33, 1, 0.65, 1)'
+const UNPACK_DELAY_MS = 280
 
 /** Matches `grid-cols-1 sm:2 md:3 lg:4 xl:5` on the portfolio grid */
 function getPortfolioGridColumns() {
@@ -86,7 +90,7 @@ function Etc() {
       setShellCollapsed(false)
       const unfoldId = window.setTimeout(() => {
         if (openSectionRef.current == null) setTilesPacked(false)
-      }, 220)
+      }, UNPACK_DELAY_MS)
       return () => clearTimeout(unfoldId)
     }
 
@@ -97,7 +101,7 @@ function Etc() {
     let cancelled = false
     const topRowCount = gridColumns
     const maxTopRowDelay = Math.max(0, topRowCount - 1) * TILE_FOLD_STAGGER_MS
-    const collapseAfter = maxTopRowDelay + TILE_FOLD_DURATION_MS + 50
+    const collapseAfter = maxTopRowDelay + TILE_FOLD_DURATION_MS + 90
 
     const collapseId = window.setTimeout(() => {
       if (!cancelled) {
@@ -252,14 +256,19 @@ function Etc() {
                       <div
                         className="relative h-full w-full will-change-transform"
                         style={{
-                          transform: tilesPacked ? 'translateY(-108%)' : 'translateY(0)',
+                          transform: tilesPacked
+                            ? 'translate3d(0, -108%, 0)'
+                            : 'translate3d(0, 0, 0)',
                           opacity: tilesPacked ? 0 : 1,
                           transitionProperty: 'transform, opacity',
                           transitionDuration: `${
-                            tilesPacked && !inTopRow ? 200 : TILE_FOLD_DURATION_MS
+                            tilesPacked && !inTopRow
+                              ? TILE_UNDER_ROW_DURATION_MS
+                              : TILE_FOLD_DURATION_MS
                           }ms`,
-                          transitionTimingFunction: 'cubic-bezier(0.33, 1, 0.26, 1)',
+                          transitionTimingFunction: TILE_FOLD_EASE,
                           transitionDelay: `${foldDelayMs}ms`,
+                          backfaceVisibility: 'hidden',
                         }}
                       >
                         {image ? (
