@@ -11,13 +11,49 @@ const ETC_SECTIONS = [
   { id: 'etc', label: 'etc.' },
 ]
 
+const GRID_SLOT_COUNT = 56
+const TILE_ENTER_STAGGER_MS = 50
+const TILE_FOLD_STAGGER_MS = 14
+const TILE_FOLD_DURATION_MS = 320
+const SHELL_COLLAPSE_MS = 520
+const SHELL_COLLAPSE_EASE = 'cubic-bezier(0.45, 0, 0.2, 1)'
+
+/** Matches `grid-cols-1 sm:2 md:3 lg:4 xl:5` on the portfolio grid */
+function getPortfolioGridColumns() {
+  if (typeof window === 'undefined') return 5
+  const w = window.innerWidth
+  if (w >= 1280) return 5
+  if (w >= 1024) return 4
+  if (w >= 768) return 3
+  if (w >= 640) return 2
+  return 1
+}
+
+function usePortfolioGridColumns() {
+  const [columns, setColumns] = useState(getPortfolioGridColumns)
+  useEffect(() => {
+    const read = () => setColumns(getPortfolioGridColumns())
+    read()
+    window.addEventListener('resize', read)
+    return () => window.removeEventListener('resize', read)
+  }, [])
+  return columns
+}
+
 function Etc() {
   const [images, setImages] = useState([])
   const [draggedIndex, setDraggedIndex] = useState(null)
   const [dragOverIndex, setDragOverIndex] = useState(null)
   const [isVisible, setIsVisible] = useState(false)
   const [openSection, setOpenSection] = useState(null)
+  const [tilesPacked, setTilesPacked] = useState(false)
+  const [shellCollapsed, setShellCollapsed] = useState(false)
   const gridRef = useRef(null)
+  const openSectionRef = useRef(null)
+  const shellCollapsedRef = useRef(false)
+
+  openSectionRef.current = openSection
+  const gridColumns = usePortfolioGridColumns()
 
   const toggleSection = (id) => {
     setOpenSection((prev) => (prev === id ? null : id))
@@ -37,6 +73,44 @@ function Etc() {
     }, 100)
     return () => clearTimeout(gridTimer)
   }, [])
+
+  // Start tile fold whenever a section opens (including switching between sections)
+  useEffect(() => {
+    if (openSection) setTilesPacked(true)
+  }, [openSection])
+
+  // After reverse-order tile fold, collapse the shell; on close, expand then unpack tiles
+  useEffect(() => {
+    if (!openSection) {
+      shellCollapsedRef.current = false
+      setShellCollapsed(false)
+      const unfoldId = window.setTimeout(() => {
+        if (openSectionRef.current == null) setTilesPacked(false)
+      }, 220)
+      return () => clearTimeout(unfoldId)
+    }
+
+    if (shellCollapsedRef.current) {
+      return undefined
+    }
+
+    let cancelled = false
+    const topRowCount = gridColumns
+    const maxTopRowDelay = Math.max(0, topRowCount - 1) * TILE_FOLD_STAGGER_MS
+    const collapseAfter = maxTopRowDelay + TILE_FOLD_DURATION_MS + 50
+
+    const collapseId = window.setTimeout(() => {
+      if (!cancelled) {
+        setShellCollapsed(true)
+        shellCollapsedRef.current = true
+      }
+    }, collapseAfter)
+
+    return () => {
+      cancelled = true
+      clearTimeout(collapseId)
+    }
+  }, [openSection, gridColumns])
 
   const handleDragStart = (e, index) => {
     setDraggedIndex(index)
@@ -100,7 +174,7 @@ function Etc() {
                   <button
                     type="button"
                     onClick={() => toggleSection(id)}
-                    className={`text-gray-600 hover:text-orange-700 hover:underline cursor-pointer transition-colors bg-transparent border-0 p-0 font-inherit text-inherit ${
+                    className={`text-gray-600 hover:text-orange-700 hover:underline cursor-text transition-colors bg-transparent border-0 p-0 font-inherit text-inherit ${
                       openSection === id ? 'text-orange-700 underline' : ''
                     }`}
                   >
@@ -125,12 +199,15 @@ function Etc() {
         </div>
       </div>
 
-      {/* Portfolio grid folds up when a section is open; replace with section panels below */}
+      {/* Tiles fold up in reverse load order; shell eases closed after the last tile */}
       <div
-        className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${
-          openSection ? 'grid-rows-[0fr]' : 'grid-rows-[1fr]'
+        className={`grid ${
+          shellCollapsed ? 'grid-rows-[0fr]' : 'grid-rows-[1fr]'
         }`}
-        style={{ marginTop: '5px' }}
+        style={{
+          marginTop: '5px',
+          transition: `grid-template-rows ${SHELL_COLLAPSE_MS}ms ${SHELL_COLLAPSE_EASE}`,
+        }}
       >
         <div className="min-h-0 overflow-hidden">
           <div
@@ -148,11 +225,17 @@ function Etc() {
                   const image = images[slotIndex]
                   const isDragging = draggedIndex === slotIndex
                   const isDragOver = dragOverIndex === slotIndex
+                  const inTopRow = slotIndex < gridColumns
+                  const foldDelayMs = tilesPacked
+                    ? inTopRow
+                      ? (gridColumns - 1 - slotIndex) * TILE_FOLD_STAGGER_MS
+                      : 0
+                    : slotIndex * TILE_ENTER_STAGGER_MS
 
                   return (
                     <div
                       key={slotIndex}
-                      className={`aspect-square rounded-lg transition-all duration-200 ${
+                      className={`aspect-square rounded-lg overflow-hidden transition-all duration-200 ${
                         isDragOver ? 'ring-2 ring-blue-500 ring-offset-2' : ''
                       } ${
                         isDragging ? 'opacity-50 scale-95' : ''
@@ -160,37 +243,51 @@ function Etc() {
                         isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                       }`}
                       style={{
-                        transitionDelay: `${slotIndex * 50}ms`
+                        transitionDelay: `${slotIndex * TILE_ENTER_STAGGER_MS}ms`,
                       }}
                       onDragOver={(e) => handleDragOver(e, slotIndex)}
                       onDrop={(e) => handleDrop(e, slotIndex)}
                       onDragEnd={handleDragEnd}
                     >
-                      {image ? (
-                        <div className="relative w-full h-full group">
-                          <img
-                            src={image.src}
-                            alt={`Portfolio ${slotIndex + 1}`}
-                            className="w-full h-full object-cover rounded-lg cursor-move transition-all duration-300 group-hover:brightness-50"
-                            draggable
-                            onDragStart={(e) => handleDragStart(e, slotIndex)}
-                            onDragEnd={handleDragEnd}
-                            onError={(e) => {
-                              console.error('Failed to load image:', image.src)
-                              e.target.style.display = 'none'
-                            }}
-                          />
-                          {image.caption && (
-                            <div className="absolute inset-0 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                              <p className="text-white text-sm font-medium text-center break-words">
-                                {image.caption}
-                              </p>
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        <div className="w-full h-full bg-gray-300 rounded-lg" />
-                      )}
+                      <div
+                        className="relative h-full w-full will-change-transform"
+                        style={{
+                          transform: tilesPacked ? 'translateY(-108%)' : 'translateY(0)',
+                          opacity: tilesPacked ? 0 : 1,
+                          transitionProperty: 'transform, opacity',
+                          transitionDuration: `${
+                            tilesPacked && !inTopRow ? 200 : TILE_FOLD_DURATION_MS
+                          }ms`,
+                          transitionTimingFunction: 'cubic-bezier(0.33, 1, 0.26, 1)',
+                          transitionDelay: `${foldDelayMs}ms`,
+                        }}
+                      >
+                        {image ? (
+                          <div className="relative h-full w-full group">
+                            <img
+                              src={image.src}
+                              alt={`Portfolio ${slotIndex + 1}`}
+                              className="h-full w-full cursor-move rounded-lg object-cover transition-all duration-300 group-hover:brightness-50"
+                              draggable
+                              onDragStart={(e) => handleDragStart(e, slotIndex)}
+                              onDragEnd={handleDragEnd}
+                              onError={(e) => {
+                                console.error('Failed to load image:', image.src)
+                                e.target.style.display = 'none'
+                              }}
+                            />
+                            {image.caption && (
+                              <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                <p className="break-words text-center text-sm font-medium text-white">
+                                  {image.caption}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <div className="h-full w-full rounded-lg bg-gray-300" />
+                        )}
+                      </div>
                     </div>
                   )
                 })}
