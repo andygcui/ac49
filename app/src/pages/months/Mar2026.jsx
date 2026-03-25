@@ -34,12 +34,30 @@ function Mar2026() {
             <div className="max-w-3xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-0 md:items-start">
                 <div className="space-y-14 md:pr-12">
+                  <p className="text-gray-600 leading-relaxed ml-40">
+                    princeton, nj <br />
+                    philadelphia, pa <br />
+                    silver spring, md <br />
+                    georgetown, dc <br />
+                    ithaca, ny
+                    
+                  </p>
+                  <p className="text-gray-600 justify-center md: justify-start">
+                    who's the fool, malcom todd <br />
+                    sick love, red hot chili peppers <br />
+                    keep looking, sade
+                  </p>
+                </div>
+
+                <div className=" md:pl-12 md:pt-20 space-y-10">
                   <p className="text-gray-600 leading-relaxed">
-                    indian wells <br />
+                  indian wells <br />
                     march madness <br />
                     suits
+                    <br />
+                    <br />
                   </p>
-                  <div className="flex justify-center md:justify-start">
+                  <div className="leading-relaxed">
                     <iframe 
                       width="80" 
                       height="80" 
@@ -50,21 +68,6 @@ function Mar2026() {
                       allowFullScreen>
                     </iframe>
                   </div>
-                </div>
-
-                <div className="md:border-l md:border-gray-200 md:pl-12 md:pt-20 space-y-10">
-                  <p className="text-gray-600 leading-relaxed">
-                    princeton, nj <br />
-                    philadelphia, pa <br />
-                    silver spring, md <br />
-                    georgetown, dc <br />
-                    ithaca, ny
-                  </p>
-                  <p className="text-gray-600 leading-relaxed">
-                    who's the fool, malcom todd <br />
-                    sick love, red hot chili peppers <br />
-                    keep looking, sade
-                  </p>
                 </div>
               </div>
             </div>
