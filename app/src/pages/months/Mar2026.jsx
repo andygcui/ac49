@@ -5,7 +5,7 @@ function Mar2026() {
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
 
-          <div className="flex justify-center"> 
+            <div className="flex justify-center mb-8">
               <video 
               src="/uploads/mar26.MOV"
               autoPlay
@@ -19,7 +19,6 @@ function Mar2026() {
               </video>
             </div>
 
-
             <header className="text-center mb-16">
 
               <h1 className="text-gray-900 mb-4">
@@ -29,42 +28,45 @@ function Mar2026() {
               <p className="text-gray-600 mb-2 italic">
                 briger, borgs, job, talks
               </p>
-              <p className="text-gray-600 mb-2">
-                <br />
-                princeton, nj <br />
-                philadelphia, pa <br />
-                silver spring, md <br />
-                georgetown, dc <br />
-                ithaca, ny <br />
-              </p>
             </header>
 
-            <div className="flex justify-center gap-10">
-              <p className="text-gray-600">
-              indian wells <br />
-              march madness <br />
-              suits
-              </p>
+            {/* Split column + rule — different rhythm from Feb’s L / C / R stack */}
+            <div className="max-w-3xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-0 md:items-start">
+                <div className="space-y-14 md:pr-12">
+                  <p className="text-gray-600 leading-relaxed">
+                    indian wells <br />
+                    march madness <br />
+                    suits
+                  </p>
+                  <div className="flex justify-center md:justify-start">
+                    <iframe 
+                      width="80" 
+                      height="80" 
+                      src="https://www.youtube.com/embed/AxTmGEyy3qY?autoplay=1" 
+                      title="sick love" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen>
+                    </iframe>
+                  </div>
+                </div>
 
-              <p className="text-gray-600">
-                who's the fool, malcom todd <br />
-                sick love, red hot chili peppers <br />
-                keep looking, sade
-                </p>
-
-                <br />
-      
-              <iframe 
-            width="80" 
-            height="80" 
-            src="https://www.youtube.com/embed/AxTmGEyy3qY?autoplay=1" 
-            title="sick love" 
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen>
-          </iframe>
-
-              <br /><br /><br /> <br /><br />
+                <div className="md:border-l md:border-gray-200 md:pl-12 md:pt-20 space-y-10">
+                  <p className="text-gray-600 leading-relaxed">
+                    princeton, nj <br />
+                    philadelphia, pa <br />
+                    silver spring, md <br />
+                    georgetown, dc <br />
+                    ithaca, ny
+                  </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    who's the fool, malcom todd <br />
+                    sick love, red hot chili peppers <br />
+                    keep looking, sade
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
