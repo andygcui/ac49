@@ -173,18 +173,17 @@ function Etc() {
             </h1>
             <p className="text-gray-600">
               {ETC_SECTIONS.map(({ id, label }, i) => (
-                <span key={id}>
-                  {i > 0 ? ', ' : null}
-                  <button
-                    type="button"
-                    onClick={() => toggleSection(id)}
-                    className={`text-gray-600 hover:text-orange-700 hover:underline cursor-text transition-colors bg-transparent border-0 p-0 font-inherit text-inherit ${
-                      openSection === id ? 'text-orange-700 underline' : ''
-                    }`}
-                  >
-                    {label}
-                  </button>
-                </span>
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => toggleSection(id)}
+                  className={`text-gray-600 hover:text-orange-700 hover:underline cursor-default hover:cursor-text transition-colors bg-transparent border-0 p-0 font-inherit text-inherit ${
+                    openSection === id ? 'text-orange-700 underline' : ''
+                  }`}
+                >
+                  {i > 0 ? ', ' : ''}
+                  {label}
+                </button>
               ))}
               {/* favorite cities: cusco, peru // lucerne, switzerland // new york, usa // chengdu, china // paris, france // kyoto, japan // providenciales, turks and caicos  */}
             </p>
