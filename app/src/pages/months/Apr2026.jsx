@@ -2,18 +2,18 @@
 function Apr2026() {
     return (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-6">
           <div className="max-w-4xl mx-auto">
 
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-3">
               <img 
-                src="/uploads/feb26.png" 
+                src="/uploads/apr26.JPG" 
                 alt="April 2026"
                 className="max-w-[200px] h-auto"
               />
             </div>
 
-            <header className="text-center mb-16">
+            <header className="text-center mb-6">
 
               <h1 className="text-gray-900 mb-4">
                 <br />
@@ -24,28 +24,18 @@ function Apr2026() {
               </p>
             </header>
 
-            {/* Artsy minimal layout */}
-            <div className="max-w-2xl mx-auto space-y-12">
-              
-              {/* Locations - left aligned */}
-              <div className="pl-14">
-                <p className="text-gray-600 leading-relaxed">
-                suits<br />
-                </p>
-              </div>
+            <div className="max-w-2xl mx-auto space-y-8">
 
-              {/* Shows - centered */}
               <div className="text-center">
                 <p className="text-gray-600">
                 princeton, nj<br />
-                fort worth, tx
+                fort worth, tx<br />
                 new york, ny
                 </p>
               </div>
 
-              {/* Music - right aligned */}
-              <div className="pr-14 text-right">
-                <p className="text-gray-600 leading-relaxed">
+              <div className="text-center">
+                <p className="text-gray-600">
                   over my dead body, drake<br />
                   all about our love, sade
                 </p>
@@ -62,6 +52,24 @@ function Apr2026() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowFullScreen>
                 </iframe>
+              </div>
+
+              <div className="flex justify-center items-center gap-3 mb-3 flex-nowrap overflow-x-auto">
+                <img 
+                  src="/uploads/apr26_2.jpg" 
+                  alt="April 2026"
+                  className="max-h-[220px] w-auto object-contain shrink-0"
+                />
+                <img 
+                  src="/uploads/apr26_4.JPG" 
+                  alt="April 2026"
+                  className="max-h-[220px] w-auto object-contain shrink-0"
+                />
+                <img 
+                  src="/uploads/apr26_3.jpg" 
+                  alt="April 2026"
+                  className="max-h-[220px] w-auto object-contain shrink-0"
+                />
               </div>
 
             </div>
