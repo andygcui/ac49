@@ -41,18 +41,6 @@ function Apr2026() {
                 </p>
               </div>
 
-              {/* YouTube embed - centered, smaller */}
-              <div className="flex justify-center pt-4">
-                <iframe 
-                  width="80" 
-                  height="80" 
-                  src="https://www.youtube.com/embed/PMk8L9FNqnY?start=20&autoplay=1" 
-                  title="over my dead body, drake" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen>
-                </iframe>
-              </div>
 
               <div className="flex justify-center items-center gap-3 mb-3 flex-nowrap overflow-x-auto">
                 <img 
@@ -70,6 +58,19 @@ function Apr2026() {
                   alt="April 2026"
                   className="max-h-[220px] w-auto object-contain shrink-0"
                 />
+                <br /><br />
+              </div>
+
+              <div className="opacity-0">
+                <iframe
+                  width="1"
+                  height="1"
+                  src="https://www.youtube.com/embed/PMk8L9FNqnY?start=20&autoplay=1"
+                  title="over my dead body, drake"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen>
+                </iframe>
               </div>
 
             </div>
