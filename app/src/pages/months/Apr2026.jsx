@@ -2,10 +2,10 @@
 function Apr2026() {
     return (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
 
-          <div className="flex justify-center items-center gap-3 mb-3 flex-nowrap overflow-x-auto">
+            <div className="flex justify-center items-center gap-3 mb-8 flex-nowrap overflow-x-auto">
                 <img 
                   src="/uploads/apr26_2.jpg" 
                   alt="April 2026"
@@ -26,8 +26,7 @@ function Apr2026() {
                   alt="April 2026"
                   className="max-h-[220px] w-auto object-contain shrink-0"
                 />
-                <br /><br />
-              </div>
+            </div>
 {/*
             <div className="flex justify-center mb-3">
               <img 
@@ -38,7 +37,7 @@ function Apr2026() {
             </div>
             */}
 
-            <header className="text-center mb-6">
+            <header className="text-center mb-16">
 
               <h1 className="text-gray-900 mb-4">
                 <br />

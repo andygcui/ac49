@@ -24,35 +24,32 @@ function Feb2026() {
               </p>
             </header>
 
-            {/* Artsy minimal layout */}
-            <div className="max-w-2xl mx-auto space-y-12">
-              
-              {/* Locations - left aligned */}
-              <div className="pl-14">
-                <p className="text-gray-600 leading-relaxed">
-                super bowl lx<br />
-                winter olympics
-                </p>
+            {/* Three equal rails + hairlines — reads balanced on desktop, stacks on small screens */}
+            <div className="max-w-2xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:gap-x-0 items-start">
+                <div className="text-center md:text-left md:pr-8 lg:pr-10">
+                  <p className="text-gray-600 leading-relaxed">
+                    super bowl lx<br />
+                    winter olympics
+                  </p>
+                </div>
+
+                <div className="text-center md:border-x md:border-gray-100 md:px-8 lg:px-10">
+                  <p className="text-gray-600 leading-relaxed">
+                    princeton, nj<br />
+                    new york, ny
+                  </p>
+                </div>
+
+                <div className="text-center md:text-right md:pl-8 lg:pl-10">
+                  <p className="text-gray-600 leading-relaxed">
+                    dreams, fleetwood mac<br />
+                    piss in the wind, joji
+                  </p>
+                </div>
               </div>
 
-              {/* Shows - centered */}
-              <div className="text-center">
-                <p className="text-gray-600">
-                princeton, nj<br />
-                new york, ny
-                </p>
-              </div>
-
-              {/* Music - right aligned */}
-              <div className="pr-14 text-right">
-                <p className="text-gray-600 leading-relaxed">
-                  dreams, fleetwood mac<br />
-                  piss in the wind, joji
-                </p>
-              </div>
-
-              {/* YouTube embed - centered, smaller */}
-              <div className="flex justify-center pt-4">
+              <div className="flex justify-center pt-10 md:pt-12">
                 <iframe 
                   width="80" 
                   height="80" 
