@@ -5,6 +5,30 @@ function Apr2026() {
         <div className="container mx-auto px-4 py-6">
           <div className="max-w-4xl mx-auto">
 
+          <div className="flex justify-center items-center gap-3 mb-3 flex-nowrap overflow-x-auto">
+                <img 
+                  src="/uploads/apr26_2.jpg" 
+                  alt="April 2026"
+                  className="max-h-[220px] w-auto object-contain shrink-0"
+                />
+                <img 
+                  src="/uploads/apr26.JPG" 
+                  alt="April 2026"
+                  className="max-h-[220px] w-auto object-contain shrink-0"
+                />
+                <img 
+                  src="/uploads/apr26_4.JPG" 
+                  alt="April 2026"
+                  className="max-h-[220px] w-auto object-contain shrink-0"
+                />
+                <img 
+                  src="/uploads/apr26_3.jpg" 
+                  alt="April 2026"
+                  className="max-h-[220px] w-auto object-contain shrink-0"
+                />
+                <br /><br />
+              </div>
+{/*
             <div className="flex justify-center mb-3">
               <img 
                 src="/uploads/apr26.JPG" 
@@ -12,6 +36,7 @@ function Apr2026() {
                 className="max-w-[200px] h-auto"
               />
             </div>
+            */}
 
             <header className="text-center mb-6">
 
@@ -36,12 +61,12 @@ function Apr2026() {
 
               <div className="text-center">
                 <p className="text-gray-600">
-                  over my dead body, drake<br />
-                  all about our love, sade
+                  over my dead body, drake <br />
+                  all about our love, sade <br />
                 </p>
               </div>
 
-
+{/*
               <div className="flex justify-center items-center gap-3 mb-3 flex-nowrap overflow-x-auto">
                 <img 
                   src="/uploads/apr26_2.jpg" 
@@ -60,6 +85,9 @@ function Apr2026() {
                 />
                 <br /><br />
               </div>
+              */}
+
+              
 
               <div className="opacity-0">
                 <iframe
