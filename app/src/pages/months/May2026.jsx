@@ -34,7 +34,7 @@ function May2026() {
                 may 2026
               </h1>
               <p className="text-gray-600 italic">
-                grief, love, depth, growth
+                love, depth, growth
               </p>
             </header>
 
