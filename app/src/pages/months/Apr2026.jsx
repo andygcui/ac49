@@ -44,7 +44,7 @@ function Apr2026() {
                 april 2026
               </h1>
               <p className="text-gray-600 mb-2 italic">
-                draws, kemps, newbs, nats
+                bike, box, kemps, newbs, nats
               </p>
             </header>
 
@@ -60,7 +60,6 @@ function Apr2026() {
 
               <div className="text-center">
                 <p className="text-gray-600">
-                  over my dead body, drake <br />
                   all about our love, sade <br />
                 </p>
               </div>
