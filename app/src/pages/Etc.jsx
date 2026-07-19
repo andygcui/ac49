@@ -6,7 +6,6 @@ const ETC_SECTIONS = [
   { id: 'music', label: 'music' },
   { id: 'hobbies', label: 'hobbies' },
   { id: 'books', label: 'books' },
-  { id: 'friends', label: 'friends' },
   { id: 'sports', label: 'sports' },
   { id: 'etc', label: 'etc.' },
 ]
