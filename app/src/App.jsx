@@ -10,6 +10,7 @@ import Feb2026 from './pages/months/Feb2026'
 import Mar2026 from './pages/months/Mar2026'
 import Apr2026 from './pages/months/Apr2026'
 import May2026 from './pages/months/May2026'
+import June2026 from './pages/months/June2026'
 import Notes2025 from './pages/months/Notes2025'
 import Gestalt from './pages/months/Gestalt'
 import Etc from './pages/Etc'
@@ -32,6 +33,7 @@ function App() {
           <Route path="/txt/mar26" element={<Mar2026 />} />
           <Route path="/txt/apr26" element={<Apr2026 />} />
           <Route path="/txt/may26" element={<May2026 />} />
+          <Route path="/txt/june26" element={<June2026 />} />
           <Route path="/txt/2025" element={<Notes2025 />} />
           <Route path="/txt/gestalt" element={<Gestalt />} />
           <Route path="/etc" element={<Etc />} />
