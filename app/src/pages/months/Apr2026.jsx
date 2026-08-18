@@ -88,10 +88,10 @@ function Apr2026() {
 
               
 
-              <div className="opacity-0">
+              <div>
                 <iframe
-                  width="1"
-                  height="1"
+                  width="80"
+                  height="80"
                   src="https://www.youtube.com/embed/PMk8L9FNqnY?start=20&autoplay=1"
                   title="over my dead body, drake"
                   frameBorder="0"

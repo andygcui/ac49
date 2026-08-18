@@ -54,16 +54,7 @@ function May2026() {
             </div>
 
             <div className="flex justify-center text-gray-600 mt-16">
-            Dust does not yield for the sky to<br />
-Echo, and <br />
-For it to soak until <br />
-A gun is shot<br /> <br />
-
-Besides to let moss <br />
-Reclaim the body<br />
-And soften bone<br />
-<br />
-            🕊️🕊️🕊️❤️❤️❤️
+            ❤️❤️❤️
             </div>
 
 
