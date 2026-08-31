@@ -22,23 +22,24 @@ function July2026() {
             </header>
 
             <div className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-              <p className="text-gray-600 text-center md:text-right leading-relaxed">
+              <p className="text-gray-600 text-center md:text-right">
                 boston, ma <br />
                 amsterdam, nl <br />
                 istanbul, tr <br />
                 cappadocia, tr <br />
                 georgetown, dc <br />
                 <br />
+                <br />
 
                 newbury street <br />
                 zara cave hotel <br />
 
               </p>
-              <p className="text-gray-600 text-center md:text-left leading-relaxed">
+              <p className="text-gray-600 text-center md:text-left">
                 hold on, kanye west <br />
                 hey jude, the beatles <br />
                 blah blah, joji <br />
-
+                <br />
 
                 <br />
                 mubadala citi open <br />

@@ -101,12 +101,12 @@ function Notes2025() {
               <p>Step soul spa,</p>
               <p>AP,</p>
               <p>Tulum,</p>
-              <p>Robbery 💔,</p>
+              <p>Robbery,</p>
               <p>Arrachera,</p>
               <p>Selecto,</p>
               <p>Vito's,</p>
               <p>Leaky,</p>
-              <p>2028✌️,</p>
+              <p>2028,</p>
               <p>Gulp,</p>
               <p>Poutine,</p>
               <p>Emma raducanu lafufu,</p>

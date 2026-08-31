@@ -29,7 +29,7 @@ function June2026() {
             </header>
 
             <div className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-              <p className="text-gray-600 text-center md:text-right leading-relaxed">
+              <p className="text-gray-600 text-center md:text-right">
                 north potomac, md <br />
                 new york, ny <br />
                 <br />
@@ -39,7 +39,7 @@ function June2026() {
 
 
               </p>
-              <p className="text-gray-600 text-center md:text-left leading-relaxed">
+              <p className="text-gray-600 text-center md:text-left">
                 joji solaris <br />
                 yankees v. tigers <br />
                 
