@@ -9,9 +9,11 @@ function Edu() {
             </h1>
             <p className="text-gray-600 max-w-2xl mx-auto">
               i am a financial engineering student @ princeton who enjoys studying algorithms, statistics & probability; web / game development; and transformer-based AI research.
+              <br /><br /><br />
             </p>
 
-            <div className="flex justify-center pointer-events-none" style={{ marginTop: '-50px', marginBottom: '-150px', minHeight: '200px', position: 'relative' }}>
+
+            {/* <div className="flex justify-center pointer-events-none" style={{ marginTop: '-50px', marginBottom: '-150px', minHeight: '200px', position: 'relative' }}>
                  <img 
                    src="/uploads/me.png" 
                    alt="me"
@@ -25,7 +27,7 @@ function Edu() {
                    }}
                    loading="eager"
                  />
-            </div>
+            </div> */}
           </header>
           <div className="mt-8">
             <h2 className="text-xl font-serif text-gray-900 mb-6 border-b border-gray-300 pb-2">experience & projects</h2>
